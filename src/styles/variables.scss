@@ -1,0 +1,25 @@
+$grid-gutter-width: 32px;
+$grid-gutter-width-base: $grid-gutter-width;
+$brand-primary: #c68009;
+$brand-secondary: #ff3737;
+$brand-text: #555555;
+$brand-dark: #2D2D2D;
+$brand-text-font: 'Open Sans', sans-serif;
+
+@mixin bgGradient () {
+  background: -webkit-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  background: -o-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+}
+
+@mixin gradient ($startColor, $endColor) {
+  background: -moz-linear-gradient(top, $startColor 0%, $endColor 100%);
+  background: -webkit-linear-gradient(top, $startColor 0%, $endColor 100%);
+  background: linear-gradient(to bottom, $startColor 0%, $endColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808a4100', endColorstr='#000000',GradientType=0 );
+}
+
+@mixin mainGradient () {
+  @include gradient(rgba(255, 120, 0, 0.5), rgba(0,0,0,1))
+}

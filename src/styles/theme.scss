@@ -1,0 +1,54 @@
+@import './reset';
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+@import '../node_modules/bootstrap/scss/mixins/breakpoints';
+@import './variables';
+
+$theme: (
+  primary: $brand-primary
+);
+
+@mixin theme($property, $color) {
+  #{$property}: map_get($theme, $color);
+}
+
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    $size: 6 - $i;
+    font-size: $size * 0.75em;
+    margin-bottom: 0.5em;
+    color: $brand-primary;
+    font-family: 'Tangerine', cursive;
+  }
+}
+
+body {
+  background-size: cover;
+  background-position: center center;
+  color: $brand-text;
+  font-family: $brand-text-font;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 10pt;
+  background-attachment: fixed;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: $grid-gutter-width/2 $grid-gutter-width;
+  color: #000;
+  border-color:  #000;
+  border: 1px solid;
+  text-transform: uppercase;
+  transition: 0.3s ease-out;
+  transition-property: color, border-color;
+  font-weight: 100;
+
+  &:hover {
+    border-color: $brand-primary;
+    color: $brand-primary;
+    cursor: pointer;
+  }
+}
